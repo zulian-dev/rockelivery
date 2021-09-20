@@ -4,12 +4,12 @@ defmodule Rockelivery.User do
   alias Ecto.Changeset
 
   @primary_key {:id, :binary_id, autogenerate: true}
-  @required_params ~w[ age addres cep cpf email password name]a
-  # %{age: 18, addres: "Rua x", cep: "12345678", cpf: "12345678909", email: "email@email.com", password_hash: "abc123", name: "Cliente Usuario"}  |> Rockelivery.User.changeset()
+  @required_params ~w[ age address cep cpf email password name]a
+  # %{age: 18, address: "Rua x", cep: "12345678", cpf: "12345678909", email: "email@email.com", password_hash: "abc123", name: "Cliente Usuario"}  |> Rockelivery.User.changeset()
 
   schema "users" do
     field :age, :integer
-    field :addres, :string
+    field :address, :string
     field :cep, :string
     field :cpf, :string
     field :email, :string
