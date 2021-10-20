@@ -9,8 +9,16 @@ defmodule RockeliveryWeb.UsersController do
   def create(conn, params) do
     with {:ok, %User{} = user} <- Rockelivery.create_user(params) do
       conn
-      |> put_status(:ok)
+      |> put_status(:created)
       |> render("create.json", user: user)
+    end
+  end
+
+  def show(conn, %{"id" => id}) do
+    with {:ok, %User{} = user} <- Rockelivery.get_user(id) do
+      conn
+      |> put_status(:ok)
+      |> render("show.json", user: user)
     end
   end
 end

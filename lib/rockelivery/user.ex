@@ -7,7 +7,7 @@ defmodule Rockelivery.User do
 
   @required_params ~w[ age address cep cpf email password name]a
 
-  @derive {Jason.Encoder, only: [:id, :name]}
+  @derive {Jason.Encoder, only: [:id, :name, :age, :cpf, :address, :email]}
 
   # %{age: 18, address: "Rua x", cep: "12345678", cpf: "12345678909", email: "email@email.com", password: "abc123", name: "Cliente Usuario"}  |> Rockelivery.User.changeset()
 
