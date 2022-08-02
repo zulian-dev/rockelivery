@@ -12,6 +12,6 @@ defmodule Rockelivery.Error do
     }
   end
 
-  def buil_user_not_found_error, do: buid(:not_found, "User not found")
-  def buil_id_format_error, do: buid(:bad_request, "invalid id format")
+  def build_user_not_found_error, do: buid(:not_found, "User not found")
+  def build_id_format_error, do: buid(:bad_request, "invalid id format")
 end

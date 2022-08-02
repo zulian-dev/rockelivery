@@ -3,6 +3,7 @@ defmodule RockeliveryWeb.Plugs.UUIDChecker do
 
   alias Ecto.UUID
   alias Plug.Conn
+  alias Rockelivery.Error
 
   def init(options), do: options
 
@@ -17,7 +18,7 @@ defmodule RockeliveryWeb.Plugs.UUIDChecker do
 
   def render_error(conn) do
     error = Error.build_id_format_error()
-    body = Jason.encode!(%{message: error.message})
+    body = Jason.encode!(%{message: error.result})
 
     conn
     |> put_resp_content_type("application/json")
